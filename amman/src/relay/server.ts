@@ -33,8 +33,8 @@ import {
   AddressLabelsResult,
   AccountStatesResult,
   RelayAccountState,
-} from '@metaplex-foundation/amman-client'
-import { AccountInfo, Keypair } from '@solana/web3.js'
+} from '@miraplex/amman-client'
+import { AccountInfo, Keypair } from '@solarti/web3.js'
 import { createServer, Server as HttpServer } from 'http'
 import { AddressInfo } from 'net'
 import { Server, Socket } from 'socket.io'

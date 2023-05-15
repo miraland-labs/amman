@@ -16,7 +16,7 @@ import {
   MSG_REQUEST_VALIDATOR_PID,
   MSG_UPDATE_ADDRESS_LABELS,
   RelayReply,
-} from '@metaplex-foundation/amman-client'
+} from '@miraplex/amman-client'
 import {
   IncomingMessage,
   Server as HttpServer,

@@ -1,4 +1,4 @@
-import { Cluster, Commitment } from '@solana/web3.js'
+import { Cluster, Commitment } from '@solarti/web3.js'
 import { ChildProcess } from 'child_process'
 import { RelayServer } from 'src/relay/server'
 import { AmmanConfig } from '../types'
@@ -34,9 +34,9 @@ export type Account = {
 }
 
 /**
- * Configures the solana-test-validator started up by amman.
+ * Configures the miraland-test-validator started up by amman.
  *
- * @property killRunningValidators if true will kill any solana-test-validators
+ * @property killRunningValidators if true will kill any miraland-test-validators
  * currently running on the system.
  *
  * @property programs array of {@link Program} which should be loaded into the
@@ -52,16 +52,16 @@ export type Account = {
  *
  * @property websocketUrl for the RPC websocket
  *
- * @property ledgerDir where the solana test validator writes the ledger
+ * @property ledgerDir where the miraland test validator writes the ledger
  * @property resetLedger if `true` the ledger is reset to genesis at startup
  * @property limitLedgerSize <SHRED_COUNT> keep this amount of shreds in root slots. [default: 10,000]
- *   - controls how much of the ledger you store {@link https://github.com/agjell/sol-tutorials/blob/master/solana-validator-faq.md#6b-how-big-is-the-ledger-how-much-storage-space-do-i-need-for-my-validator}
+ *   - controls how much of the ledger you store {@link https://github.com/agjell/sol-tutorials/blob/master/miraland-validator-faq.md#6b-how-big-is-the-ledger-how-much-storage-space-do-i-need-for-my-validator}
  *   - increase this in order keep to keep transactions around longer for later inspection
  *
  * @property verifyFees if `true` the validator is not considered fully started
  * up until it charges transaction fees
  *
- * @property detached if `true` the `solana-test-validator` will run detached
+ * @property detached if `true` the `miraland-test-validator` will run detached
  * which allows `amman` to exit while the validator keeps running. This
  * defaults to `true` when run in CI.
  *
@@ -101,7 +101,7 @@ export type AmmanStateInternal = AmmanState & {
 }
 
 /**
- * The type that is returned when invoking `solana feature status ...` in order
+ * The type that is returned when invoking `miraland feature status ...` in order
  * to obtain the features that a validator running on a specific network
  * supports.
  *

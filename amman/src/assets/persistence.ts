@@ -1,8 +1,8 @@
 import {
   LOCALHOST,
   PersistedAccountInfo,
-} from '@metaplex-foundation/amman-client'
-import { AccountInfo, Connection, Keypair, PublicKey } from '@solana/web3.js'
+} from '@miraplex/amman-client'
+import { AccountInfo, Connection, Keypair, PublicKey } from '@solarti/web3.js'
 import { strict as assert } from 'assert'
 import { promises as fs } from 'fs'
 import { tmpdir } from 'os'

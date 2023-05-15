@@ -3,8 +3,8 @@ import {
   AMMAN_RELAY_PORT,
   AMMAN_STORAGE_PORT,
   Amman,
-} from '@metaplex-foundation/amman-client'
-import { Connection } from '@solana/web3.js'
+} from '@miraplex/amman-client'
+import { Connection } from '@solarti/web3.js'
 import { strict as assert } from 'assert'
 import { execSync as exec } from 'child_process'
 import path from 'path'
@@ -28,6 +28,7 @@ import {
   handleSnapshotCommand,
 } from './commands'
 import { closeConnection } from './utils'
+import { Commitment } from '@solarti/web3.js'
 
 const commands = yargs(hideBin(process.argv))
   // -----------------
@@ -35,7 +36,7 @@ const commands = yargs(hideBin(process.argv))
   // -----------------
   .command(
     'start',
-    'Launches a solana-test-validator and the amman relay and/or mock storage if so configured',
+    'Launches a miraland-test-validator and the amman relay and/or mock storage if so configured',
     (args) => {
       return args
         .positional('config', {
@@ -64,16 +65,16 @@ const commands = yargs(hideBin(process.argv))
   // -----------------
   .command(
     'stop',
-    'Stops the relay and storage and kills the running solana test validator'
+    'Stops the relay and storage and kills the running miraland test validator'
   )
   // -----------------
   // logs
   // -----------------
-  .command('logs', `Launches 'solana logs' and pipes them through a prettifier`)
+  .command('logs', `Launches 'miraland logs' and pipes them through a prettifier`)
   // -----------------
   // airdrop
   // -----------------
-  .command('airdrop', 'Airdrops provided Sol to the payer', (args) =>
+  .command('airdrop', 'Airdrops provided Mln to the payer', (args) =>
     args
       .positional('destination', {
         describe:
@@ -81,7 +82,7 @@ const commands = yargs(hideBin(process.argv))
         type: 'string',
       })
       .positional('amount', {
-        describe: 'The amount of Sol to airdrop',
+        describe: 'The amount of Mln to airdrop',
         type: 'number',
         default: 1,
       })
@@ -96,7 +97,7 @@ const commands = yargs(hideBin(process.argv))
         describe: 'The commitment to use for the Airdrop transaction',
         type: 'string',
         choices: commitments,
-        default: 'singleGossip',
+        default: 'confirmed', // MI, vanilla: singleGossip
       })
       .help('help', airdropHelp())
   )
@@ -225,7 +226,7 @@ async function main() {
     // airdrop
     // -----------------
     case 'airdrop': {
-      const { commitment, label } = args
+      const { commitment='confirmed', label='receiver' } = args // MI: add destructure default value
       try {
         const destination = cs[1]
         const maybeAmount = cs[2]
@@ -245,13 +246,13 @@ async function main() {
           destination != null,
           'public key string or keypair file is required'
         )
-        assertCommitment(commitment)
+        assertCommitment(commitment as string)
 
         const { connection } = await handleAirdropCommand(
           destination,
           amount,
-          label!,
-          commitment
+          label! as string,
+          commitment as Commitment
         )
 
         await closeConnection(connection, true)
@@ -296,7 +297,7 @@ async function main() {
       )
 
       const { connection, rendered, savedAccountPath } =
-        await handleAccountCommand(address, includeTx, save)
+        await handleAccountCommand(address, includeTx as boolean, save as boolean)
 
       console.log(rendered)
 
@@ -328,7 +329,7 @@ async function main() {
     // run
     // -----------------
     case 'run': {
-      let labels: string | string[] = args.label ?? []
+      let labels: string | string[] = args.label as string ?? []
       if (!Array.isArray(labels)) {
         labels = [labels]
       }
@@ -343,8 +344,8 @@ async function main() {
         const { stdout, stderr } = await handleRunCommand(
           labels,
           cmdArgs,
-          txOnly,
-          accOnly
+          txOnly as boolean,
+          accOnly as boolean
         )
         console.error(stderr)
         console.log(stdout)
@@ -376,8 +377,8 @@ async function disconnectAmman(connection?: Connection) {
 
 async function stopAmman() {
   try {
-    exec('pkill -f solana-test-validator')
-    logInfo('Killed currently running solana-test-validator')
+    exec('pkill -f miraland-test-validator')
+    logInfo('Killed currently running miraland-test-validator')
   } catch (_) {}
 
   try {

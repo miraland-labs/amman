@@ -1,6 +1,6 @@
 {
-  "name": "@metaplex-foundation/amman-client",
-  "version": "0.2.4",
+  "name": "@miraplex/amman-client",
+  "version": "0.2.4-alpha",
   "description": "Client piece of amman which supports with the running validator, relay and storage.",
   "main": "dist/amman-client.js",
   "types": "dist/amman-client.d.ts",
@@ -19,8 +19,15 @@
     "doc:update": "./sh/update-docs",
     "doctoc": "doctoc README.md"
   },
-  "repository": "git@github.com:metaplex-foundation/amman.git",
+  "repository": "git@github.com:miraplex/amman.git",
   "author": "Thorsten Lorenz <thlorenz@gmx.de>",
+  "contributors": [
+    {
+      "name": "Miraland Crafters",
+      "email": "crafters@miraland.top",
+      "url": "https://miraland.top/"
+    }
+  ],
   "license": "Apache-2.0",
   "private": false,
   "directories": {
@@ -30,7 +37,7 @@
     "dist/**/*"
   ],
   "keywords": [
-    "solana",
+    "miraland",
     "blockchain",
     "test",
     "tools",
@@ -43,7 +50,7 @@
   "dependencies": {
     "@metaplex-foundation/cusper": "^0.0.2",
     "@solana/spl-token-registry": "^0.2.2405",
-    "@solana/web3.js": "^1.66.2",
+    "@solarti/web3.js": "^1.73.2-rc4",
     "bn.js": "^5.2.1",
     "debug": "^4.3.3",
     "js-sha3": "^0.8.0",

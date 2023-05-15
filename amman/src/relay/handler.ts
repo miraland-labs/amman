@@ -6,15 +6,15 @@ import {
   ValidatorPidResult,
   VoidResult,
   VOID_REPLY,
-} from '@metaplex-foundation/amman-client'
+} from '@miraplex/amman-client'
 import {
   KILL_AMMAN_EXIT_CODE,
   PersistedAccountInfo,
   RelayReply,
   RelayAccountState,
   AccountStatesResult,
-} from '@metaplex-foundation/amman-client'
-import { Keypair, PublicKey } from '@solana/web3.js'
+} from '@miraplex/amman-client'
+import { Keypair, PublicKey } from '@solarti/web3.js'
 import { AccountProvider } from '../accounts/providers'
 import { AccountStates } from '../accounts/state'
 import { AccountPersister, mapPersistedAccountInfos } from '../assets'

@@ -1,0 +1,32 @@
+name: Install Miraland
+
+inputs:
+  miraland_version:
+    description: Version of Miraland to install
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Cache Miraland Install
+      id: cache-miraland-install
+      uses: actions/cache@v3
+      with:
+        path: "/home/runner/.local/share/miraland/"
+        key: ${{ runner.os }}-miraland-install-cache-v${{ inputs.miraland_version  }}
+
+    - name: Install Miraland
+      if: steps.cache-miraland-install.outputs.cache-hit != 'true'
+      run: |
+        sh -c "$(curl -sSfL https://release.miraland.top/v${{ inputs.miraland_version }}/install)"
+      shell: bash
+
+    - name: Add Miraland bin to Path
+      run: |
+        echo "$HOME/.local/share/miraland/install/active_release/bin" >> $GITHUB_PATH
+      shell: bash
+
+    - name: Verify Miraland install
+      run: |
+        miraland --version
+      shell: bash

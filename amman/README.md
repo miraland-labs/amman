@@ -1,6 +1,6 @@
 # Amman
 
-**A** **m** odern **man** datory toolbelt to help test solana SDK libraries and apps on a locally
+**A** **m** odern **man** datory toolbelt to help test miraland SDK libraries and apps on a locally
 running validator.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -30,12 +30,12 @@ transactions, asserts and more via an API. Please find the [API docs here](https
 amman [command]
 
 Commands:
-  amman start    Launches a solana-test-validator and the amman relay and/or
+  amman start    Launches a miraland-test-validator and the amman relay and/or
                  mock storage if so configured
-  amman stop     Stops the relay and storage and kills the running solana
+  amman stop     Stops the relay and storage and kills the running miraland
                  test validator
-  amman logs     Launches 'solana logs' and pipes them through a prettifier
-  amman airdrop  Airdrops provided Sol to the payer
+  amman logs     Launches 'miraland logs' and pipes them through a prettifier
+  amman airdrop  Airdrops provided Mln to the payer
   amman label    Adds labels for accounts or transactions to amman
   amman account  Retrieves account information for a PublicKey or a label or
                  shows all labeled accounts
@@ -59,13 +59,13 @@ If that isn't found either it uses a default config.
 The config should be a JavaScript module exporting 'validator' with any of the below
 properties:
 
-- killRunningValidators: if true will kill any solana-test-validators currently running on the system.
+- killRunningValidators: if true will kill any miraland-test-validators currently running on the system.
 - programs: bpf programs which should be loaded into the test validator
 - accountsCluster: default cluster to clone remote accounts from
 - accounts: array of remote accounts to load into the test validator
 - jsonRpcUrl: the URL at which the test validator should listen for JSON RPC requests
 - websocketUrl: for the RPC websocket
-- ledgerDir: where the solana test validator writes the ledger
+- ledgerDir: where the miraland test validator writes the ledger
 - resetLedger: if true the ledger is reset to genesis at startup
 - verifyFees: if true the validator is not considered fully started up until it charges transaction fees
 
@@ -85,7 +85,7 @@ A _mock storage_ is launched only if a `storage` config is provided. In case a s
 is already running on the known _storage port_, it is killed first.
 
 ```js
-import { LOCALHOST, tmpLedgerDir } from '@metaplex-foundation/amman'
+import { LOCALHOST, tmpLedgerDir } from '@miraplex/amman'
 
 module.exports = {
   validator: {
@@ -125,7 +125,7 @@ Below is an example of a config where the accounts are being pulled from a speci
 module.exports = {
   validator: {
     // By default Amman will pull the account data from the accountsCluster (can be overridden on a per account basis)
-    accountsCluster: 'https://api.metaplex.solana.com',
+    accountsCluster: 'https://api.metaplex.miraland.top',
     accounts: [
         {
           label: 'Token Metadata Program',
@@ -150,7 +150,7 @@ module.exports = {
 ### Deactivating Test Validator Features
 
 For the different clusters like _devnet_ some features are disabled. By default the locally
-running solana-test-validator does not disable any features and thus behaves differently than
+running miraland-test-validator does not disable any features and thus behaves differently than
 the provided clusters. 
 
 In order to run tests in a scenario that is closer to how they would run against a specific
@@ -183,8 +183,8 @@ module.exports = {
 
 #### Resources
 
-- [test validator runtime features](https://docs.solana.com/developing/test-validator#appendix-ii-runtime-features)
-- [runtime new features](https://docs.solana.com/developing/programming-model/runtime#new-features)
+- [test validator runtime features](https://docs.miraland.top/developing/test-validator#appendix-ii-runtime-features)
+- [runtime new features](https://docs.miraland.top/developing/programming-model/runtime#new-features)
 
 ## LICENSE
 

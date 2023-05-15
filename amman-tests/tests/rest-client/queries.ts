@@ -1,9 +1,9 @@
 import {
   MSG_REQUEST_AMMAN_VERSION,
   MSG_REQUEST_VALIDATOR_PID,
-} from '@metaplex-foundation/amman-client'
-import { AMMAN_VERSION } from '@metaplex-foundation/amman/dist/relay/types'
-import { AmmanVersion } from '@metaplex-foundation/amman/src/relay/types'
+} from '@miraplex/amman-client'
+import { AMMAN_VERSION } from '@miraplex/amman/dist/relay/types'
+import { AmmanVersion } from '@miraplex/amman/src/relay/types'
 import spok from 'spok'
 import test from 'tape'
 import { assertHasResult } from '../utils/asserts'

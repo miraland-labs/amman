@@ -1,4 +1,4 @@
-import { Keypair, PublicKey } from '@solana/web3.js'
+import { Keypair, PublicKey } from '@solarti/web3.js'
 
 /**
  * Represents anything that can be used to extract the base58 representation

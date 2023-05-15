@@ -1,4 +1,4 @@
-import { Connection, PublicKey } from '@solana/web3.js'
+import { Connection, PublicKey } from '@solarti/web3.js'
 import { strict as assert } from 'assert'
 import { LOCALHOST } from '../consts'
 import { scopedLog } from '../utils/log'

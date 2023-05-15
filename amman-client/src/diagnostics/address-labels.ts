@@ -1,11 +1,11 @@
-import { Keypair, PublicKey, Signer } from '@solana/web3.js'
+import { Keypair, PublicKey, Signer } from '@solarti/web3.js'
 import { strict as assert } from 'assert'
 import { AmmanClient, ConnectedAmmanClient } from '../relay/client'
 import {
-  extractSolanaAddresses,
+  extractMiralandAddresses,
   isPublicKeyAddress,
   isSignatureAddress,
-  isValidSolanaAddress,
+  isValidMiralandAddress,
 } from '../utils/address'
 import { KeyLike, isKeyLike, publicKeyString } from '../utils/keys'
 import { scopedLog } from '../utils/log'
@@ -42,7 +42,7 @@ export type LoadOrGenKeypair = (
 
 /**
  * Manages address labels in order to improve logging and provide them to tools
- * like the solana explorer.
+ * like the miraland explorer.
  *
  * @category diagnostics
  */
@@ -86,7 +86,7 @@ export class AddressLabels {
    */
   addLabel: AddLabel = async (label, key) => {
     const keyString = publicKeyString(key)
-    if (!isValidSolanaAddress(keyString)) return
+    if (!isValidMiralandAddress(keyString)) return
 
     label = await this._nonCollidingLabel(mapLabel(label), keyString)
     this.logLabel(`🔑 ${label}: ${keyString}`)
@@ -110,7 +110,7 @@ export class AddressLabels {
       for (let [label, key] of Object.entries(obj)) {
         if (typeof label === 'string' && isKeyLike(key)) {
           const keyString = publicKeyString(key)
-          if (isValidSolanaAddress(keyString)) {
+          if (isValidMiralandAddress(keyString)) {
             label = await this._nonCollidingLabel(
               mapLabel(label),
               keyString,
@@ -320,7 +320,7 @@ export class AddressLabels {
       'cannot only filter by transactionsOnly or accountsOnly'
     )
 
-    let addresses = extractSolanaAddresses(text)
+    let addresses = extractMiralandAddresses(text)
     if (transactionsOnly) {
       addresses = addresses.filter(isSignatureAddress)
     } else if (accountsOnly) {

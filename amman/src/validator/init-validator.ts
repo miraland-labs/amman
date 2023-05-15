@@ -1,7 +1,7 @@
 import {
   LOCALHOST,
   AMMAN_STORAGE_PORT,
-} from '@metaplex-foundation/amman-client'
+} from '@miraplex/amman-client'
 import { execSync as exec } from 'child_process'
 import http from 'http'
 import { mapPersistedAccountInfos } from '../assets'
@@ -12,10 +12,10 @@ import { AmmanConfig } from '../types'
 import { logError, logInfo, sleep, tmpLedgerDir } from '../utils'
 import { killRunningServer, resolveServerAddress } from '../utils/http'
 import {
-  buildSolanaValidatorArgs,
-  startSolanaValidator,
+  buildMiralandValidatorArgs,
+  startMiralandValidator,
   waitForValidator,
-} from './solana-validator'
+} from './miraland-validator'
 import { AmmanState, ValidatorConfig } from './types'
 
 /**
@@ -64,8 +64,8 @@ export async function initValidator(
   // -----------------
   if (killRunningValidators) {
     try {
-      exec('pkill -f solana-test-validator')
-      logInfo('Killed currently running solana-test-validator')
+      exec('pkill -f miraland-test-validator')
+      logInfo('Killed currently running miraland-test-validator')
       await sleep(1000)
     } catch (err) {}
   }
@@ -74,7 +74,7 @@ export async function initValidator(
   // Launch Validator
   // -----------------
   logInfo(
-    'Launching new solana-test-validator with programs predeployed and ledger at %s',
+    'Launching new miraland-test-validator with programs predeployed and ledger at %s',
     ledgerDir
   )
   const {
@@ -85,8 +85,8 @@ export async function initValidator(
     accountsFolder,
     keypairs,
     cleanupConfig,
-  } = await buildSolanaValidatorArgs(config, forceClone ?? false)
-  const validator = await startSolanaValidator(args, detached)
+  } = await buildMiralandValidatorArgs(config, forceClone ?? false)
+  const validator = await startMiralandValidator(args, detached)
   const ammanState: AmmanState = {
     validator,
     detached,

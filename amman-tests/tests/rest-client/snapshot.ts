@@ -1,7 +1,7 @@
 import {
   MSG_REQUEST_SNAPSHOT_SAVE,
   SnapshotSaveResult,
-} from '@metaplex-foundation/amman-client'
+} from '@miraplex/amman-client'
 import path from 'path'
 import { promises as fs } from 'fs'
 import spok from 'spok'

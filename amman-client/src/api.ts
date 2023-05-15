@@ -4,7 +4,7 @@ import {
   Keypair,
   LAMPORTS_PER_SOL,
   PublicKey,
-} from '@solana/web3.js'
+} from '@solarti/web3.js'
 import { AccountDataSerializer } from './assets/account-data-serializer'
 import { MutableAccount } from './assets/persistence'
 import {
@@ -148,7 +148,7 @@ export class Amman {
   /**
    * Drops the specified amount of tokens to the provided public key.
    *
-   * @param connection to solana JSON RPC node
+   * @param connection to miraland JSON RPC node
    * @param publicKey to drop sols to
    * @param sol amount of sols to drop
    *

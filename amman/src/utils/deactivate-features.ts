@@ -3,7 +3,7 @@ import { spawnSync } from 'child_process'
 import { ValidatorConfig, ValidatorFeature } from '../validator/types'
 
 function getDeactivatedFeatures(network: string): string[] {
-  const child = spawnSync(`solana`, [
+  const child = spawnSync(`miraland`, [
     'feature',
     'status',
     '--display-all',
@@ -18,7 +18,7 @@ function getDeactivatedFeatures(network: string): string[] {
     ]
     return features.filter((f) => f.status === 'inactive').map((f) => f.id)
   } catch (err) {
-    throw new Error(`Could not parse output from solana feature status: ${err}`)
+    throw new Error(`Could not parse output from miraland feature status: ${err}`)
   }
 }
 

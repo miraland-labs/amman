@@ -1,6 +1,6 @@
 import { maybeAmmanInstance } from '../utils'
-import { pipeSolanaLogs } from '../utils/solana-logs'
+import { pipeMiralandLogs } from '../utils/miraland-logs'
 
 export function handleLogsCommand() {
-  return pipeSolanaLogs(maybeAmmanInstance())
+  return pipeMiralandLogs(maybeAmmanInstance())
 }

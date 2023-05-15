@@ -6,7 +6,7 @@ import {
   MSG_REQUEST_STORE_KEYPAIR,
   MSG_UPDATE_ADDRESS_LABELS,
   VoidResult,
-} from '@metaplex-foundation/amman-client'
+} from '@miraplex/amman-client'
 import path from 'path'
 import spok from 'spok'
 import test from 'tape'
@@ -20,8 +20,8 @@ import { restClient } from '../utils/rest-client'
 
 // @ts-ignore importing json module
 import saved from '../../fixtures/snapshots/01_token-metadata/accounts/13DX32Lou1qH62xUosRyk9QnQpetbuxtEgPzbkKvQmVu.json'
-import { Keypair } from '@solana/web3.js'
-import { keypairSecretFromObject } from '@metaplex-foundation/amman-client'
+import { Keypair } from '@solarti/web3.js'
+import { keypairSecretFromObject } from '@miraplex/amman-client'
 const fixtures = path.resolve(__dirname, '../../fixtures')
 const assetsDir = path.join(fixtures, 'assets')
 

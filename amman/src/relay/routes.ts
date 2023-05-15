@@ -14,7 +14,7 @@ import {
   MSG_REQUEST_VALIDATOR_PID,
   AMMAN_RELAY_URI,
   MSG_REQUEST_KILL_AMMAN,
-} from '@metaplex-foundation/amman-client'
+} from '@miraplex/amman-client'
 import { UnreachableCaseError } from 'ts-essentials'
 
 export const RELAY_REST_PATH = 'relay'

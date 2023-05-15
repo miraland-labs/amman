@@ -1,16 +1,16 @@
 import test, { Test } from 'tape'
 
-import { AmmanConfig } from '@metaplex-foundation/amman'
-import { AMMAN_RELAY_URI } from '@metaplex-foundation/amman-client'
-import { ConnectedAmmanClient } from '@metaplex-foundation/amman-client/src/amman-client'
+import { AmmanConfig } from '@miraplex/amman'
+import { AMMAN_RELAY_URI } from '@miraplex/amman-client'
+import { ConnectedAmmanClient } from '@miraplex/amman-client/src/amman-client'
 import {
   completeConfig,
   DEFAULT_START_CONFIG,
-} from '@metaplex-foundation/amman/src/utils/config'
-import { initValidator } from '@metaplex-foundation/amman/src/validator/init-validator'
-import { AmmanStateInternal } from '@metaplex-foundation/amman/src/validator/types'
-import { DeepPartial } from '@metaplex-foundation/amman/src/types'
-import { logError } from '@metaplex-foundation/amman/dist/utils'
+} from '@miraplex/amman/src/utils/config'
+import { initValidator } from '@miraplex/amman/src/validator/init-validator'
+import { AmmanStateInternal } from '@miraplex/amman/src/validator/types'
+import { DeepPartial } from '@miraplex/amman/src/types'
+import { logError } from '@miraplex/amman/dist/utils'
 
 const DEFAULT_TEST_CONFIG: Required<AmmanConfig> = { ...DEFAULT_START_CONFIG }
 
@@ -92,7 +92,7 @@ export async function killAmman(t: Test, ammanState: AmmanStateInternal) {
  * This is a workaround the fact that web3.js doesn't close it's socket connection and provides no way to do so.
  * Therefore the process hangs for a considerable time after the tests finish, increasing the feedback loop.
  *
- * Therefore until https://github.com/solana-labs/solana/issues/25069 is addressed we'll see:
+ * Therefore until https://github.com/miraland-labs/miraland/issues/25069 is addressed we'll see:
  * ws error: connect ECONNREFUSED 127.0.0.1:8900
  * printed to the console
  *

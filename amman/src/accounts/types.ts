@@ -1,4 +1,4 @@
-import { Account, Mint } from '@solana/spl-token'
+import { Account, Mint } from '@solarti/solarti-token'
 
 export function isMint(value: any): value is Mint {
   const mint = value as Mint

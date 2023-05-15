@@ -20,4 +20,4 @@ export function versionString(version: AmmanVersion): string {
 
 export const ENSURE_VERSION = `Make sure to use amman cli version >=${versionString(
   MIN_AMMAN_CLI_VERSION_REQUIRED
-)} by updating amman updating it from npm:\nhttps://www.npmjs.com/package/@metaplex-foundation/amman\n`
+)} by updating amman updating it from npm:\nhttps://www.npmjs.com/package/@miraplex/amman\n`

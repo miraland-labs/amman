@@ -10,7 +10,7 @@ import {
   TransactionError,
   TransactionResponse,
   TransactionSignature,
-} from '@solana/web3.js'
+} from '@solarti/web3.js'
 import { Assert, assertContainMessages, AssertOpts } from '../asserts/asserts'
 
 export type { MaybeErrorWithCode } from '@metaplex-foundation/cusper'

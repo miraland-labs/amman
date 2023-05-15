@@ -1,4 +1,4 @@
-// https://github.com/solana-labs/solana/blob/cd09390367d2ac66e2269a39cd40c4b3097c6732/explorer/src/utils/tx.ts
+// https://github.com/miraland-labs/miraland/blob/cd09390367d2ac66e2269a39cd40c4b3097c6732/explorer/src/utils/tx.ts
 import {
   SystemProgram,
   StakeProgram,
@@ -11,7 +11,7 @@ import {
   SYSVAR_STAKE_HISTORY_PUBKEY,
   Secp256k1Program,
   Ed25519Program,
-} from '@solana/web3.js'
+} from '@solarti/web3.js'
 
 export enum Cluster {
   Amman,
@@ -62,7 +62,7 @@ export enum PROGRAM_NAMES {
   // other
   ACUMEN = 'Acumen Program',
   BONFIDA_POOL = 'Bonfida Pool Program',
-  BREAK_SOLANA = 'Break Solana Program',
+  BREAK_MIRALAND = 'Break Miraland Program',
   CHAINLINK_ORACLE = 'Chainlink OCR2 Oracle Program',
   CHAINLINK_STORE = 'Chainlink Store Program',
   MANGO_GOVERNANCE = 'Mango Governance Program',
@@ -100,7 +100,7 @@ export enum PROGRAM_NAMES {
   SERUM_3 = 'Serum Dex Program v3',
   SERUM_SWAP = 'Serum Swap Program',
   SOLEND = 'Solend Program',
-  SOLIDO = 'Lido for Solana Program',
+  SOLIDO = 'Lido for Miraland Program',
   STEP_SWAP = 'Step Finance Swap Program',
   SWIM_SWAP = 'Swim Swap Program',
   SWITCHBOARD = 'Switchboard Oracle Program',
@@ -196,7 +196,7 @@ export const PROGRAM_INFO_BY_ID: { [address: string]: ProgramInfo } = {
     deployments: [Cluster.MainnetBeta],
   },
   BrEAK7zGZ6dM71zUDACDqJnekihmwF15noTddWTsknjC: {
-    name: PROGRAM_NAMES.BREAK_SOLANA,
+    name: PROGRAM_NAMES.BREAK_MIRALAND,
     deployments: LIVE_CLUSTERS,
   },
   cjg3oHmg9uuPsP8D6g29NWvhySJkdYdAo9D25PRbKXJ: {

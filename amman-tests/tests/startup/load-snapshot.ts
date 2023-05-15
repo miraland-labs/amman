@@ -1,10 +1,10 @@
 import path from 'path'
 
 import test from 'tape'
-import { LOCALHOST } from '@metaplex-foundation/amman-client'
+import { LOCALHOST } from '@miraplex/amman-client'
 import { killAmman, launchAmman } from '../utils/launch'
 
-import { AccountInfo, Connection, PublicKey } from '@solana/web3.js'
+import { AccountInfo, Connection, PublicKey } from '@solarti/web3.js'
 // @ts-ignore importing json module
 import saved from '../../fixtures/snapshots/01_token-metadata/accounts/13DX32Lou1qH62xUosRyk9QnQpetbuxtEgPzbkKvQmVu.json'
 

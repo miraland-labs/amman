@@ -3,7 +3,7 @@ import {
   ParsedMessageAccount,
   PublicKey,
   TransactionSignature,
-} from '@solana/web3.js'
+} from '@solarti/web3.js'
 import BN from 'bn.js'
 import table from 'text-table'
 import { AddressLabels } from './address-labels'
@@ -116,7 +116,7 @@ export class TokenBalances {
       if (currentMint == null) {
         // The account has not been minted the mint to before and thus it has no
         // pre balance. We denote this as `0` pre balance which is what the
-        // solana explorer does as well.
+        // miraland explorer does as well.
         currentMint = current[mint] = { amountPre: new BN(0), rawMint }
       }
       currentMint.amountPost = new BN(uiTokenAmount.amount)

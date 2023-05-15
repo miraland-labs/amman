@@ -1,4 +1,4 @@
-import { AMMAN_STORAGE_PORT } from '@metaplex-foundation/amman-client'
+import { AMMAN_STORAGE_PORT } from '@miraplex/amman-client'
 import fs from 'fs'
 import http, {
   IncomingMessage,

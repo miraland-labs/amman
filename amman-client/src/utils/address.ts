@@ -1,12 +1,12 @@
-import { PublicKey } from '@solana/web3.js'
+import { PublicKey } from '@solarti/web3.js'
 
-const captureSolanaAddressRx = /(\b[0-9a-zA-Z]{43,88})\b/g
+const captureMiralandAddressRx = /(\b[0-9a-zA-Z]{43,88})\b/g
 
 /**
- * Checks if a string is valid base58 Solana via a Regex.
+ * Checks if a string is valid base58 Miraland via a Regex.
  * @private
  */
-export function isValidSolanaAddress(address: string) {
+export function isValidMiralandAddress(address: string) {
   return /^[0-9a-zA-Z]{43,88}$/.test(address)
 }
 
@@ -15,7 +15,7 @@ export function isValidSolanaAddress(address: string) {
  * @private
  */
 export function isValidPublicKeyAddress(address: string) {
-  if (!isValidSolanaAddress(address) || address.length > 44) return false
+  if (!isValidMiralandAddress(address) || address.length > 44) return false
   try {
     new PublicKey(address)
     return true
@@ -43,16 +43,16 @@ export function isSignatureAddress(
   return address.type === 'signature'
 }
 
-export function extractSolanaAddresses(text: string): Address[] {
-  const matches = text.match(captureSolanaAddressRx) ?? []
+export function extractMiralandAddresses(text: string): Address[] {
+  const matches = text.match(captureMiralandAddressRx) ?? []
 
   return matches
     .slice(0)
-    .map(identifySolanaAddress)
+    .map(identifyMiralandAddress)
     .filter((x) => x != null) as Address[]
 }
 
-export function identifySolanaAddress(maybeAddress: string): Address | null {
+export function identifyMiralandAddress(maybeAddress: string): Address | null {
   if (maybeAddress.length <= 44)
     return { type: 'publicKey', value: maybeAddress }
   if (maybeAddress.length >= 87)

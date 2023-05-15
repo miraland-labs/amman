@@ -5,7 +5,7 @@ import {
   Keypair,
   Signer,
   Transaction,
-} from '@solana/web3.js'
+} from '@solarti/web3.js'
 import { AddressLabels } from '../diagnostics/address-labels'
 import { ConfirmedTransactionAssertablePromise } from './confirmed-transaction-assertable-promise'
 import { defaultConfirmOptions } from './consts'

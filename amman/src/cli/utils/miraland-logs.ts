@@ -1,16 +1,16 @@
-import { Amman, LOCALHOST } from '@metaplex-foundation/amman-client'
+import { Amman, LOCALHOST } from '@miraplex/amman-client'
 import {
   Commitment,
   Connection,
   Context,
   Logs,
   TransactionError,
-} from '@solana/web3.js'
+} from '@solarti/web3.js'
 import colors from 'ansi-colors'
 import { Cluster, LogMessage, PrettyLogger } from '../../diagnostics/programs'
 import { logTrace } from '../../utils'
 
-export async function pipeSolanaLogs(amman?: Amman, commitment?: Commitment) {
+export async function pipeMiralandLogs(amman?: Amman, commitment?: Commitment) {
   const logger = new PrettyLogger(amman)
   commitment ??= 'confirmed'
   const connection = new Connection(LOCALHOST, commitment)

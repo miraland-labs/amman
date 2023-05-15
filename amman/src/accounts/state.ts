@@ -2,7 +2,7 @@ import {
   AccountDiff,
   isKeyLike,
   publicKeyString,
-} from '@metaplex-foundation/amman-client'
+} from '@miraplex/amman-client'
 import {
   AccountInfo,
   Connection,
@@ -15,7 +15,7 @@ import {
   TransactionResponse,
   VersionedMessage,
   VersionedTransactionResponse,
-} from '@solana/web3.js'
+} from '@solarti/web3.js'
 import { strict as assert } from 'assert'
 import BN from 'bn.js'
 import { diff } from 'deep-diff'
@@ -210,7 +210,7 @@ export class AccountStates extends EventEmitter {
     // they don't show up in the amman-explorer.
     // Additionally even looking up that type of transaction amman-explorer
     // fails to properly show it's instructions while they show up fine inside
-    // the solana-explorer.
+    // the miraland-explorer.
     // Sample Code:
     //
     // ```ts

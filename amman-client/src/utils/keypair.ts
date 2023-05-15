@@ -1,4 +1,4 @@
-import { Keypair } from '@solana/web3.js'
+import { Keypair } from '@solarti/web3.js'
 import { sha3_512, Message } from 'js-sha3'
 import nacl from 'tweetnacl'
 

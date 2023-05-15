@@ -1,4 +1,4 @@
-import { AMMAN_VERSION } from '@metaplex-foundation/amman/src/relay/types'
+import { AMMAN_VERSION } from '@miraplex/amman/src/relay/types'
 import spok from 'spok'
 import test from 'tape'
 import { killAmman, launchAmman, relayClient } from '../utils/launch'

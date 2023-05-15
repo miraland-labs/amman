@@ -71,6 +71,6 @@ export function runHelp() {
 
   Examples:
     amman run -- spl-token balance +token --owner +owner
-    amman run -- solana balance +token
+    amman run -- miraland balance +token
 `
 }

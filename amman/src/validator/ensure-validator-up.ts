@@ -5,7 +5,7 @@ import {
   PublicKey,
   SystemProgram,
   Transaction,
-} from '@solana/web3.js'
+} from '@solarti/web3.js'
 import waitOn from 'wait-on'
 import { logDebug } from '../utils'
 

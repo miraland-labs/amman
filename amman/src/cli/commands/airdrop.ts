@@ -1,9 +1,9 @@
 import {
   Amman,
-  isValidSolanaAddress,
+  isValidMiralandAddress,
   LOCALHOST,
-} from '@metaplex-foundation/amman-client'
-import { Commitment, Connection, PublicKey } from '@solana/web3.js'
+} from '@miraplex/amman-client'
+import { Commitment, Connection, PublicKey } from '@solarti/web3.js'
 import { strict as assert } from 'assert'
 import path from 'path'
 import { commitments, logDebug, logInfo } from '../../utils'
@@ -17,7 +17,7 @@ export async function handleAirdropCommand(
 ) {
   let keystring = pubKeyOrPathToKeypairFile
 
-  if (!isValidSolanaAddress(pubKeyOrPathToKeypairFile)) {
+  if (!isValidMiralandAddress(pubKeyOrPathToKeypairFile)) {
     logDebug(`Resolving public key from file: ${pubKeyOrPathToKeypairFile}`)
     assert(
       path.extname(pubKeyOrPathToKeypairFile) === '.json',
@@ -37,7 +37,7 @@ export async function handleAirdropCommand(
   amman.addr.addLabel(label, keystring)
 
   logInfo(
-    `Airdropping ${amount} Sol to account '${keystring}' labeled '${label}'`
+    `Airdropping ${amount} Mln to account '${keystring}' labeled '${label}'`
   )
   await amman.airdrop(connection, new PublicKey(keystring), amount)
   return { connection }
@@ -45,7 +45,7 @@ export async function handleAirdropCommand(
 
 export function airdropHelp() {
   return `
-Airdrops provided Sol to the provided public key.
+Airdrops provided Mln to the provided public key.
 
   Usage:
     amman airdrop <amount> <public key or path to keypair file>

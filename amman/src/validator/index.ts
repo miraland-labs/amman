@@ -1,2 +1,2 @@
-export * from './solana-validator'
+export * from './miraland-validator'
 export * from './init-validator'

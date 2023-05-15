@@ -1,6 +1,6 @@
 # Amman [![Build and Test](https://github.com/metaplex-foundation/amman/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/metaplex-foundation/amman/actions/workflows/build-and-test.yml)
 
-**A** **m** odern **man** datory toolbelt to help test solana SDK libraries and apps on a locally
+**A** **m** odern **man** datory toolbelt to help test miraland SDK libraries and apps on a locally
 running validator.
 
 ## Amman CLI
@@ -22,7 +22,7 @@ Use this inside your tests and the browser.
 ## Amman Tests
 
 Test amman itself to make sure that configuratio of and communication with the
-_solana-test-validator_ works as expected and that requests to the relay are handled properly.
+_miraland-test-validator_ works as expected and that requests to the relay are handled properly.
 
 Deveolpers adding/changing a feature should add a test here to ensure it works.
 

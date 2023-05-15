@@ -1,5 +1,5 @@
-import { isValidPublicKeyAddress } from '@metaplex-foundation/amman-client'
-import { PublicKey } from '@solana/web3.js'
+import { isValidPublicKeyAddress } from '@miraplex/amman-client'
+import { PublicKey } from '@solarti/web3.js'
 import { spawnSync } from 'child_process'
 import path from 'path'
 import { logError, logInfo } from '../utils'
@@ -30,11 +30,11 @@ export async function saveAccount(
     'json',
   ]
   logInfo(`Saving account ${accountId} from cluster ${endpoint}`)
-  spawnSync('solana', ['account', accountId, ...makeRemainingArgs(accountId)])
+  spawnSync('miraland', ['account', accountId, ...makeRemainingArgs(accountId)])
   if (executable) {
     logInfo(`Saving executable data for ${accountId} from cluster ${endpoint}`)
     const executableId = await getExecutableAddress(accountId)
-    spawnSync('solana', [
+    spawnSync('miraland', [
       'account',
       executableId,
       ...makeRemainingArgs(executableId),

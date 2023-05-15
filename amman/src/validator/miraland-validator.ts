@@ -1,5 +1,5 @@
-import { PersistedAccountInfo } from '@metaplex-foundation/amman-client'
-import { Keypair } from '@solana/web3.js'
+import { PersistedAccountInfo } from '@miraplex/amman-client'
+import { Keypair } from '@solarti/web3.js'
 import { ChildProcess, spawn } from 'child_process'
 import { AccountStates } from 'src/accounts/state'
 import { createTemporarySnapshot, SnapshotConfig } from '../assets'
@@ -8,14 +8,14 @@ import { maybeDeactivateFeatures } from '../utils/deactivate-features'
 import { canAccessSync } from '../utils/fs'
 import { scopedLog } from '../utils/log'
 import { ensureValidatorIsUp } from './ensure-validator-up'
-import { solanaConfig } from './prepare-config'
+import { miralandConfig } from './prepare-config'
 import { processAccounts } from './process-accounts'
 import { processSnapshot } from './process-snapshot'
 import { AmmanState } from './types'
 
 const { logDebug, logInfo, logTrace } = scopedLog('validator')
 
-export async function buildSolanaValidatorArgs(
+export async function buildMiralandValidatorArgs(
   config: Required<AmmanConfig>,
   forceClone: boolean
 ) {
@@ -38,9 +38,9 @@ export async function buildSolanaValidatorArgs(
   const { assetsFolder } = config
 
   // -----------------
-  // Setup Solana Config
+  // Setup Miraland Config
   // -----------------
-  const { configPath, cleanupConfig } = await solanaConfig({
+  const { configPath, cleanupConfig } = await miralandConfig({
     websocketUrl,
     jsonRpcUrl,
     commitment,
@@ -98,9 +98,9 @@ export async function buildSolanaValidatorArgs(
   }
 }
 
-export async function startSolanaValidator(args: string[], detached: boolean) {
+export async function startMiralandValidator(args: string[], detached: boolean) {
   logTrace('start %O', args)
-  const child = spawn('solana-test-validator', args, {
+  const child = spawn('miraland-test-validator', args, {
     detached,
     stdio: 'inherit',
   })
@@ -196,11 +196,11 @@ export async function restartValidator(
   try {
     await killValidatorChild(ammanState.validator)
 
-    const { args, cleanupConfig, ...rest } = await buildSolanaValidatorArgs(
+    const { args, cleanupConfig, ...rest } = await buildMiralandValidatorArgs(
       config,
       false
     )
-    const validator = await startSolanaValidator(args, ammanState.detached)
+    const validator = await startMiralandValidator(args, ammanState.detached)
     ammanState.validator = validator
 
     await waitForValidator(

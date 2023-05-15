@@ -1,8 +1,8 @@
 import {
   MSG_REQUEST_KILL_AMMAN,
   MSG_REQUEST_VALIDATOR_PID,
-} from '@metaplex-foundation/amman-client'
-import { KILL_AMMAN_EXIT_CODE } from '@metaplex-foundation/amman-client/src/amman-client'
+} from '@miraplex/amman-client'
+import { KILL_AMMAN_EXIT_CODE } from '@miraplex/amman-client/src/amman-client'
 import spok from 'spok'
 import test from 'tape'
 import { assertHasResult } from '../../utils/asserts'

@@ -3,7 +3,7 @@ import {
   AccountStatesResult,
   MSG_REQUEST_ACCOUNT_SAVE,
   MSG_REQUEST_ACCOUNT_STATES,
-} from '@metaplex-foundation/amman-client'
+} from '@miraplex/amman-client'
 import path from 'path'
 import spok from 'spok'
 import test from 'tape'

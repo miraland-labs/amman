@@ -3,7 +3,7 @@ import {
   isReplyWithError,
   isReplyWithResult,
   RelayReply,
-} from '@metaplex-foundation/amman-client'
+} from '@miraplex/amman-client'
 
 export function assertHasResult<T>(
   t: Test,

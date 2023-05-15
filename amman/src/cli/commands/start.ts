@@ -5,7 +5,7 @@ import { completeConfig, DEFAULT_START_CONFIG } from '../../utils/config'
 import { canAccess } from '../../utils/fs'
 import { initValidator } from '../../validator'
 import { cliAmmanInstance } from '../utils'
-import { pipeSolanaLogs } from '../utils/solana-logs'
+import { pipeMiralandLogs } from '../utils/miraland-logs'
 
 export type StartCommandArgs = {
   config?: string
@@ -38,7 +38,7 @@ export async function handleStartCommand(args: StartCommandArgs) {
     await initValidator(config, args.forceClone)
 
     if (config.streamTransactionLogs) {
-      pipeSolanaLogs(cliAmmanInstance())
+      pipeMiralandLogs(cliAmmanInstance())
     }
     return { needHelp: false }
   } catch (err: any) {
@@ -87,7 +87,7 @@ A config should be aJavaScript module exporting at a minimum 'validator' with an
 
 If no config is provided, a local .ammanrc.js will be used, falling back to a default config if not found.
 
-killRunningValidators: if true will kill any solana-test-validators currently running on the system.
+killRunningValidators: if true will kill any miraland-test-validators currently running on the system.
 
 programs: bpf programs which should be loaded into the test validator
 
@@ -95,7 +95,7 @@ jsonRpcUrl: the URL at which the test validator should listen for JSON RPC reque
 
 websocketUrl: for the RPC websocket
 
-ledgerDir: where the solana test validator writes the ledger
+ledgerDir: where the miraland test validator writes the ledger
 
 resetLedger: if true the ledger is reset to genesis at startup
 

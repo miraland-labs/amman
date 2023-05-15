@@ -1,4 +1,4 @@
-import { ConfirmOptions } from '@solana/web3.js'
+import { ConfirmOptions } from '@solarti/web3.js'
 
 /**
  * Default options for sending and confirming a transaction

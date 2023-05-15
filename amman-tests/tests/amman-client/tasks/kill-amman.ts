@@ -1,4 +1,4 @@
-import { KILL_AMMAN_EXIT_CODE } from '@metaplex-foundation/amman-client/src/amman-client'
+import { KILL_AMMAN_EXIT_CODE } from '@miraplex/amman-client/src/amman-client'
 import spok from 'spok'
 import test from 'tape'
 import { launchAmman, relayClient } from '../../utils/launch'

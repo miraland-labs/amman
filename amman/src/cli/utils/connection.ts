@@ -1,4 +1,4 @@
-import { Connection } from '@solana/web3.js'
+import { Connection } from '@solarti/web3.js'
 
 export type ConnectionWithInternals = Connection & {
   _rpcWebSocket: { close: () => Promise<void> }

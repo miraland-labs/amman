@@ -15,12 +15,12 @@
 // tested yet
 import spok from 'spok'
 import test from 'tape'
-import { Amman, LOCALHOST } from '@metaplex-foundation/amman-client'
+import { Amman, LOCALHOST } from '@miraplex/amman-client'
 import { killAmman, launchAmman, relayClient } from '../../utils/launch'
 
 import os from 'os'
-import { Connection, LAMPORTS_PER_SOL, PublicKey } from '@solana/web3.js'
-import { AmmanState } from '@metaplex-foundation/amman/src/validator/types'
+import { Connection, LAMPORTS_PER_SOL, PublicKey } from '@solarti/web3.js'
+import { AmmanState } from '@miraplex/amman/src/validator/types'
 
 const tmpdir = os.tmpdir()
 const address = 'A15Y2eoMNGeX4516TYTaaMErwabCrf9AB9mrzFohdQJz'
@@ -51,7 +51,7 @@ if (!DISABLED) {
       t.equal(
         account?.lamports,
         LAMPORTS_PER_SOL * SOL,
-        'account now exists with the airdropped Sol'
+        'account now exists with the airdropped Mln'
       )
       connection = null
     })

@@ -1,8 +1,8 @@
-import { AmmanRequest, RelayReply } from '@metaplex-foundation/amman-client'
+import { AmmanRequest, RelayReply } from '@miraplex/amman-client'
 import {
   AmmanRelayRoutes,
   ammanRelayRoutes,
-} from '@metaplex-foundation/amman/src/relay/routes'
+} from '@miraplex/amman/src/relay/routes'
 
 import axios, { AxiosError } from 'axios'
 

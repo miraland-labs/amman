@@ -3,7 +3,7 @@ import {
   Connection,
   TransactionResponse,
   TransactionSignature,
-} from '@solana/web3.js'
+} from '@solarti/web3.js'
 import { strict as assert } from 'assert'
 import {
   Assert,

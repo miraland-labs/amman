@@ -1,4 +1,4 @@
-import { TransactionResponse, TransactionSignature } from '@solana/web3.js'
+import { TransactionResponse, TransactionSignature } from '@solarti/web3.js'
 import { AMMAN_EXPLORER } from '../consts'
 import type {
   ConfirmedTransactionDetails,

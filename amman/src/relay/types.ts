@@ -1,7 +1,7 @@
 import {
   AmmanAccountRendererMap,
   AmmanVersion,
-} from '@metaplex-foundation/amman-client'
+} from '@miraplex/amman-client'
 import { AmmanAccountProvider } from '../types'
 
 /** The version of amman, used by amman-explorer to detect amman compatibility */

@@ -1,10 +1,10 @@
-import { Commitment } from '@solana/web3.js'
+import { Commitment } from '@solarti/web3.js'
 import { promises as fs } from 'fs'
 import { tmpdir } from 'os'
 import path from 'path'
 import { createHash } from '../utils'
 
-export async function solanaConfig(config: {
+export async function miralandConfig(config: {
   jsonRpcUrl: string
   websocketUrl: string
   commitment: Commitment

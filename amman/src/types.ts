@@ -1,4 +1,4 @@
-import { AccountInfo } from '@solana/web3.js'
+import { AccountInfo } from '@solarti/web3.js'
 import { SnapshotConfig } from './assets'
 import { RelayConfig } from './relay/types'
 import { StorageConfig } from './storage'
@@ -7,7 +7,7 @@ import { ValidatorConfig } from './validator/types'
 export {
   RelayAccountState,
   AccountDiff,
-} from '@metaplex-foundation/amman-client'
+} from '@miraplex/amman-client'
 
 export type DeepPartial<T> = {
   [P in keyof T]?: T[P] extends Array<infer I>
@@ -21,7 +21,7 @@ export type DeepPartial<T> = {
  * @property validatorConfig Validator configuration
  * @property relayConfig Relay configuration
  * @property storageConfig Mock Storage configuration
- * @property streamTransactionLogs if `true` the `solana logs` command is
+ * @property streamTransactionLogs if `true` the `miraland logs` command is
  * spawned and its output piped through a prettifier, defaults to run except when in a CI environment
  */
 export type AmmanConfig = {

@@ -1,7 +1,7 @@
 import {
   MSG_REQUEST_RESTART_VALIDATOR,
   MSG_REQUEST_VALIDATOR_PID,
-} from '@metaplex-foundation/amman-client'
+} from '@miraplex/amman-client'
 import spok from 'spok'
 import test from 'tape'
 import { assertHasResult, assertSuccess } from '../../utils/asserts'

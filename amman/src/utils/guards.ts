@@ -1,4 +1,4 @@
-import { Commitment } from '@solana/web3.js'
+import { Commitment } from '@solarti/web3.js'
 import { strict as assert } from 'assert'
 
 export const commitments: Readonly<Commitment[]> = [

@@ -1,4 +1,4 @@
-import { LAMPORTS_PER_SOL } from '@solana/web3.js'
+import { LAMPORTS_PER_SOL } from '@solarti/web3.js'
 import BN from 'bn.js'
 
 // TODO(thlorenz): Copied from SDK for now until a version with those types is published

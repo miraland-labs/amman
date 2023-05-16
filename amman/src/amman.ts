@@ -10,6 +10,8 @@ export * from './types'
 export {
   AmmanAccountRendererMap,
   LOCALHOST,
+  assertConfirmedTransaction, // MI added for test case
+  assertTransactionSummary // MI added for test case
 } from '@miraplex/amman-client'
 
 /**

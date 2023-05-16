@@ -1,5 +1,5 @@
 import { LOCALHOST } from '@miraplex/amman-client'
-import { Connection, LAMPORTS_PER_SOL, PublicKey } from '@solarti/web3.js'
+import { Connection, LAMPORTS_PER_MLN, PublicKey } from '@solarti/web3.js'
 import { bold, dim, blueBright, green } from 'ansi-colors'
 import { strict as assert } from 'assert'
 // @ts-ignore no types available, but it's a simpler function
@@ -45,7 +45,7 @@ export async function handleAccountCommand(
       )
     }
     const len = accountInfo.data.length
-    const sol = accountInfo.lamports / LAMPORTS_PER_SOL
+    const mln = accountInfo.lamports / LAMPORTS_PER_MLN
 
     const accountStates = await tryResolveAccountStates(pubkey)
     const rawData =
@@ -55,7 +55,7 @@ export async function handleAccountCommand(
 
     const rendered = `
 ${bold('Public Key')}: ${address}
-${bold('Balance   ')}: ${sol} SOL
+${bold('Balance   ')}: ${mln} MLN
 ${bold('Owner     ')}: ${accountInfo.owner}
 ${bold('Executable')}: ${accountInfo.executable}
 ${bold('Rent Epoch')}: ${accountInfo.rentEpoch}

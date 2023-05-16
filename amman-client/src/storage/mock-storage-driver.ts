@@ -8,7 +8,7 @@ import {
   Amount,
   MetaplexFile,
   MetaplexPlugin,
-  sol,
+  mln,
   StorageDriver,
 } from './sdk-types'
 
@@ -41,7 +41,7 @@ export class AmmanMockStorageDriver implements StorageDriver {
 
   getUploadPrice: (bytes: number) => Promise<Amount> = (bytes) => {
     const price = bytes * this.costPerByte
-    const amount = sol(price)
+    const amount = mln(price)
     return Promise.resolve(amount)
   }
 

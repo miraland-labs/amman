@@ -1,4 +1,4 @@
-import { LAMPORTS_PER_SOL } from '@solarti/web3.js'
+import { LAMPORTS_PER_MLN } from '@solarti/web3.js'
 import BN from 'bn.js'
 
 // TODO(thlorenz): Copied from SDK for now until a version with those types is published
@@ -52,8 +52,8 @@ export type Currency = {
 
 export type Opaque<T, K> = T & { __opaque__: K }
 
-export const SOL = {
-  symbol: 'SOL',
+export const MLN = {
+  symbol: 'MLN',
   decimals: 9,
 }
 
@@ -71,11 +71,11 @@ export const amount = (
 }
 
 export const lamports = (lamports: number | BN): Amount => {
-  return amount(lamports, SOL)
+  return amount(lamports, MLN)
 }
 
-export const sol = (sol: number): Amount => {
-  return lamports(sol * LAMPORTS_PER_SOL)
+export const mln = (mln: number): Amount => {
+  return lamports(mln * LAMPORTS_PER_MLN)
 }
 
 export const toBasisPoints = (value: number | BN): BasisPoints => {

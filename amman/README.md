@@ -129,7 +129,7 @@ module.exports = {
     accounts: [
         {
           label: 'Token Metadata Program',
-          accountId:'metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s',
+          accountId:'Meta88XpDHcSJZDFiHop6c9sXaufkZX5depkZyrYBWv',
           // marking executable as true will cause Amman to pull the executable data account as well automatically
           executable: true,
         },
@@ -140,7 +140,8 @@ module.exports = {
           // executable: false,
           
           // Providing a cluster here will override the accountsCluster field
-          cluster: 'https://metaplex.devnet.rpcpool.com'
+          // MI, vanilla: https://metaplex.devnet.rpcpool.com
+          cluster: 'https://api.devnet-mln.arcaps.com'
         }
       ]
   }

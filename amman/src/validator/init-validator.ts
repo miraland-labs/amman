@@ -24,7 +24,8 @@ import { AmmanState, ValidatorConfig } from './types'
 export const DEFAULT_VALIDATOR_CONFIG: ValidatorConfig = {
   killRunningValidators: true,
   programs: [],
-  accountsCluster: 'https://metaplex.devnet.rpcpool.com',
+  // accountsCluster: 'https://metaplex.devnet.rpcpool.com',
+  accountsCluster: 'https://api.devnet-mln.arcaps.com', // MI
   accounts: [],
   jsonRpcUrl: LOCALHOST,
   websocketUrl: '',

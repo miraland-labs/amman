@@ -218,7 +218,7 @@ export class AccountStates extends EventEmitter {
     //   const params: TransferParams = {
     //     fromPubkey: payer,
     //     toPubkey: recvr,
-    //     lamports: LAMPORTS_PER_SOL,
+    //     lamports: LAMPORTS_PER_MLN,
     //   }
     //   return SystemProgram.transfer(params)
     // }

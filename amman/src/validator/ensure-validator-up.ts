@@ -1,7 +1,7 @@
 import {
   Connection,
   Keypair,
-  LAMPORTS_PER_SOL,
+  LAMPORTS_PER_MLN,
   PublicKey,
   SystemProgram,
   Transaction,
@@ -11,8 +11,8 @@ import { logDebug } from '../utils'
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
-async function airdrop(connection: Connection, publicKey: PublicKey, sol = 1) {
-  const sig = await connection.requestAirdrop(publicKey, sol * LAMPORTS_PER_SOL)
+async function airdrop(connection: Connection, publicKey: PublicKey, mln = 1) {
+  const sig = await connection.requestAirdrop(publicKey, mln * LAMPORTS_PER_MLN)
   const signatureResult = await connection.confirmTransaction(sig)
   return { signature: sig, signatureResult }
 }

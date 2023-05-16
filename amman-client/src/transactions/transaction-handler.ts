@@ -1,4 +1,4 @@
-import type { ErrorResolver } from '@metaplex-foundation/cusper'
+import type { ErrorResolver } from '@miraplex/cusper'
 import {
   ConfirmOptions,
   Connection,

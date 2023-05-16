@@ -19,7 +19,7 @@ import { Amman, LOCALHOST } from '@miraplex/amman-client'
 import { killAmman, launchAmman, relayClient } from '../../utils/launch'
 
 import os from 'os'
-import { Connection, LAMPORTS_PER_SOL, PublicKey } from '@solarti/web3.js'
+import { Connection, LAMPORTS_PER_MLN, PublicKey } from '@solarti/web3.js'
 import { AmmanState } from '@miraplex/amman/src/validator/types'
 
 const tmpdir = os.tmpdir()
@@ -34,7 +34,7 @@ if (!DISABLED) {
     let state: AmmanState
 
     const amman = Amman.instance()
-    const SOL = 666
+    const MLN = 666
 
     t.test('airdrop: start amman', async (_) => {
       state = await launchAmman({
@@ -44,13 +44,13 @@ if (!DISABLED) {
 
     t.test('airdrop: to the payer', async (t) => {
       let connection: Connection | null = new Connection(LOCALHOST, 'confirmed')
-      const { signature } = await amman.airdrop(connection, pubkey, SOL)
+      const { signature } = await amman.airdrop(connection, pubkey, MLN)
       t.ok(signature.length >= 87, 'completes with valid transaction signature')
 
       const account = await connection.getAccountInfo(pubkey, 'confirmed')
       t.equal(
         account?.lamports,
-        LAMPORTS_PER_SOL * SOL,
+        LAMPORTS_PER_MLN * MLN,
         'account now exists with the airdropped Mln'
       )
       connection = null

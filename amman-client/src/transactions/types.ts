@@ -1,4 +1,4 @@
-import type { MaybeErrorWithCode } from '@metaplex-foundation/cusper'
+import type { MaybeErrorWithCode } from '@miraplex/cusper'
 import {
   Connection,
   PublicKey,
@@ -13,7 +13,7 @@ import {
 } from '@solarti/web3.js'
 import { Assert, assertContainMessages, AssertOpts } from '../asserts/asserts'
 
-export type { MaybeErrorWithCode } from '@metaplex-foundation/cusper'
+export type { MaybeErrorWithCode } from '@miraplex/cusper'
 
 /** @private */
 export type ErrorFromProgramLogs = (logs: string[]) => MaybeErrorWithCode

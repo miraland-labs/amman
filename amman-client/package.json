@@ -1,6 +1,6 @@
 {
   "name": "@miraplex/amman-client",
-  "version": "0.2.4-alpha",
+  "version": "0.2.5",
   "description": "Client piece of amman which supports with the running validator, relay and storage.",
   "main": "dist/amman-client.js",
   "types": "dist/amman-client.d.ts",
@@ -48,7 +48,7 @@
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
-    "@metaplex-foundation/cusper": "^0.0.2",
+    "@miraplex/cusper": "^0.0.2",
     "@solana/spl-token-registry": "^0.2.2405",
     "@solarti/web3.js": "^1.73.2-rc4",
     "bn.js": "^5.2.1",

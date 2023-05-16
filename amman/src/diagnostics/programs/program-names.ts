@@ -141,31 +141,31 @@ export const PROGRAM_INFO_BY_ID: { [address: string]: ProgramInfo } = {
   },
 
   // spl
-  ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL: {
+  ATAccPjxdgWfJKKN4PmfJ55FbEDEwD8zJUwVjuL9MuHy: {
     name: PROGRAM_NAMES.ASSOCIATED_TOKEN,
     deployments: ALL_CLUSTERS,
   },
-  Feat1YXHhH6t1juaWF74WLcfv4XoNocjXA6sPWHNgAse: {
+  FeatQtFWK7aZCvBCVURnhLaUvrm2m8tPN4jHhriettbc: {
     name: PROGRAM_NAMES.FEATURE_PROPOSAL,
     deployments: ALL_CLUSTERS,
   },
-  LendZqTs7gn5CTSJU1jWKhKuVpjJGom45nnwPb2AMTi: {
+  Lendom2HkAKTe8bLUMxDxpBd8kCYUbZjECGtx9RFV7c: {
     name: PROGRAM_NAMES.LENDING,
     deployments: LIVE_CLUSTERS,
   },
-  Memo1UhkJRfHyvLMcVucJwxXeuD728EqVDDwQDxFMNo: {
+  MemojWWmbFiRdUEQtRpMkeeyNB181Mr9uWEzdrgHUnc: {
     name: PROGRAM_NAMES.MEMO,
     deployments: ALL_CLUSTERS,
   },
-  MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr: {
+  MemoE5FsL5zWDjihivRfHTpkR8RdviRbziKsfGS9Ntd: {
     name: PROGRAM_NAMES.MEMO_2,
     deployments: ALL_CLUSTERS,
   },
-  namesLPneVptA9Z5rqUDD9tMTWEJwofgaYwp8cawRkX: {
+  NamSVdu81GY7ntoqY5Ts4ojoch1JZoetQXb8cuS8gbx: {
     name: PROGRAM_NAMES.NAME,
     deployments: LIVE_CLUSTERS,
   },
-  SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy: {
+  spooqgqqDxZgVc3pR6EvuVFZJ1kj7ABM4Hccz1gwAN1: {
     name: PROGRAM_NAMES.STAKE_POOL,
     deployments: LIVE_CLUSTERS,
   },
@@ -173,11 +173,11 @@ export const PROGRAM_INFO_BY_ID: { [address: string]: ProgramInfo } = {
     name: PROGRAM_NAMES.SWAP,
     deployments: LIVE_CLUSTERS,
   },
-  TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA: {
+  Token4Q2B47VCdUy8u3rSTMMk2bGA1k7eN8qfKSzdiM: {
     name: PROGRAM_NAMES.TOKEN,
     deployments: ALL_CLUSTERS,
   },
-  metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s: {
+  Meta88XpDHcSJZDFiHop6c9sXaufkZX5depkZyrYBWv: {
     name: PROGRAM_NAMES.TOKEN_METADATA,
     deployments: LIVE_CLUSTERS,
   },

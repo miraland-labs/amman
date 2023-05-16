@@ -1,8 +1,8 @@
-import { ErrorResolver } from '@metaplex-foundation/cusper'
+import { ErrorResolver } from '@miraplex/cusper'
 import {
   Connection,
   Keypair,
-  LAMPORTS_PER_SOL,
+  LAMPORTS_PER_MLN,
   PublicKey,
 } from '@solarti/web3.js'
 import { AccountDataSerializer } from './assets/account-data-serializer'
@@ -150,18 +150,18 @@ export class Amman {
    *
    * @param connection to miraland JSON RPC node
    * @param publicKey to drop sols to
-   * @param sol amount of sols to drop
+   * @param mln amount of sols to drop
    *
    * @category utils
    */
-  async airdrop(connection: Connection, publicKey: PublicKey, sol = 1) {
+  async airdrop(connection: Connection, publicKey: PublicKey, mln = 1) {
     const sig = await connection.requestAirdrop(
       publicKey,
-      sol * LAMPORTS_PER_SOL
+      mln * LAMPORTS_PER_MLN
     )
     const receiverLabel = await this.addr.resolveRemoteAddress(publicKey)
     const receiver = receiverLabel == null ? '' : ` -> ${receiverLabel}`
-    await this.addr.addLabel(`🪂 ${sol} SOL${receiver}`, sig)
+    await this.addr.addLabel(`🪂 ${mln} MLN${receiver}`, sig)
 
     // TODO(thlorenz): Tried to fix deprecated method use but am running into
     // 'signature should be bas58 encoded' issue. After attempting to fix this

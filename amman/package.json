@@ -1,6 +1,6 @@
 {
   "name": "@miraplex/amman",
-  "version": "0.12.3",
+  "version": "0.12.6",
   "description": "A modern mandatory toolbelt to help test miraland SDK libraries and apps on a locally running validator.",
   "main": "dist/amman.js",
   "types": "dist/amman.d.ts",
@@ -21,7 +21,7 @@
     "doc:update": "./sh/update-docs",
     "doctoc": "doctoc README.md"
   },
-  "repository": "git@github.com:miraland-labs/amman.git",
+  "repository": "https://github.com/miraland-labs/amman",
   "author": "Thorsten Lorenz <thlorenz@gmx.de>",
   "contributors": [
     {
@@ -50,7 +50,7 @@
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
-    "@miraplex/amman-client": "^0.2.5",
+    "@miraplex/amman-client": "^0.2.6",
     "@solarti/solarti-token": "^0.3.7-rc0",
     "@solarti/web3.js": "^1.73.2-rc4",
     "ansi-colors": "^4.1.1",

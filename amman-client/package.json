@@ -1,6 +1,6 @@
 {
   "name": "@miraplex/amman-client",
-  "version": "0.2.5",
+  "version": "0.2.7",
   "description": "Client piece of amman which supports with the running validator, relay and storage.",
   "main": "dist/amman-client.js",
   "types": "dist/amman-client.d.ts",
@@ -19,7 +19,7 @@
     "doc:update": "./sh/update-docs",
     "doctoc": "doctoc README.md"
   },
-  "repository": "git@github.com:miraplex/amman.git",
+  "repository": "https://github.com/miraland-labs/amman",
   "author": "Thorsten Lorenz <thlorenz@gmx.de>",
   "contributors": [
     {
